@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
+import { FacilityGallery } from '../components/ui/FacilityGallery';
 import { PageCta } from '../components/ui/PageCta';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
 import { caseStudies, clientNames, futureVision, sustainability } from '../data/content';
+import { facilityPhotos, futureVisionPhoto } from '../data/facilityPhotos';
 import { stockImages } from '../data/images';
 import { getWhatsAppLink } from '../lib/contactLinks';
 
 const caseStudyColors = [
   'from-marcs-orange to-amber-500',
-  'from-marcs-green to-emerald-600',
+  'from-marcs-green to-blue-500',
   'from-marcs-teal to-cyan-600',
   'from-violet-600 to-purple-600',
 ];
@@ -34,7 +36,7 @@ export function ProjectsPage() {
       </PageHero>
 
       {/* Case Studies */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-20 lg:py-28 bg-blue-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Problem-Solving"
@@ -86,24 +88,7 @@ export function ProjectsPage() {
             light
             align="center"
           />
-          <div className="grid md:grid-cols-3 gap-5">
-            {[
-              { src: stockImages.powderCoating, alt: 'Powder coating process' },
-              { src: stockImages.factoryFloor, alt: 'Manufacturing facility' },
-              { src: stockImages.warehouse, alt: 'Production and dispatch' },
-            ].map((photo) => (
-              <div
-                key={photo.alt}
-                className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-[4/3] group"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
-          </div>
+          <FacilityGallery photos={facilityPhotos} columns={3} light />
         </div>
       </SectionShell>
 
@@ -130,7 +115,7 @@ export function ProjectsPage() {
       </section>
 
       {/* Sustainability */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Sustainability & Safety"
@@ -155,7 +140,7 @@ export function ProjectsPage() {
       </section>
 
       {/* Future Vision */}
-      <SectionShell bgImage={stockImages.metalWork} overlay="green" className="py-20 text-white">
+      <SectionShell bgImage={futureVisionPhoto.src} overlay="green" className="py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -166,7 +151,7 @@ export function ProjectsPage() {
               />
               <ul className="space-y-4 -mt-4">
                 {futureVision.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-green-50">
+                  <li key={item} className="flex items-start gap-3 text-blue-50">
                     <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-marcs-yellow text-sm shrink-0">
                       →
                     </span>
@@ -181,11 +166,11 @@ export function ProjectsPage() {
                 Partner With Us
               </Link>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video">
+            <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video bg-white/5">
               <img
-                src={stockImages.manufacturing}
-                alt="Future growth"
-                className="w-full h-full object-cover"
+                src={futureVisionPhoto.src}
+                alt={futureVisionPhoto.title}
+                className="w-full h-full object-contain bg-white"
               />
             </div>
           </div>

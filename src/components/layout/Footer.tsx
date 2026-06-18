@@ -8,7 +8,7 @@ import { Logo } from '../ui/Logo';
 
 export function Footer() {
   return (
-    <footer className="bg-marcs-dark text-slate-300">
+    <footer className="bg-marcs-dark text-blue-100/80 border-t border-blue-900/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-700 text-center text-sm text-slate-500">
+        <div className="mt-10 pt-6 border-t border-blue-900/40 text-center text-sm text-blue-200/60">
           <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
           <p className="mt-1 italic">
             &ldquo;Delivering Quality coating solutions with Precision &amp; Commitment&rdquo;

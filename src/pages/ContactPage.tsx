@@ -63,7 +63,7 @@ export function ContactPage() {
         </div>
       </div>
 
-      <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-blue-50/60 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-marcs-green/5 rounded-full blur-3xl" aria-hidden />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
@@ -157,7 +157,7 @@ export function ContactPage() {
 
               <div className="rounded-2xl bg-marcs-green text-white p-6 shadow-lg border border-white/10">
                 <h2 className="font-bold text-lg mb-4">Logistics</h2>
-                <ul className="space-y-3 text-sm text-green-100">
+                <ul className="space-y-3 text-sm text-blue-100">
                   <li className="flex gap-2"><span>📍</span><span>{logistics.address}</span></li>
                   <li className="flex gap-2"><span>🕐</span><span>{logistics.dockHours}</span></li>
                   <li className="flex gap-2"><span>🚛</span><span>{logistics.receiving}</span></li>

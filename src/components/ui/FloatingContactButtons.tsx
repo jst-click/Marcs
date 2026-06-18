@@ -21,7 +21,7 @@ export function FloatingContactButtons() {
 
       <a
         href={getTelLink()}
-        className="group flex items-center gap-2 rounded-full bg-marcs-green pl-4 pr-5 py-3 text-white shadow-lg shadow-green-900/30 hover:bg-marcs-teal hover:scale-105 transition-all"
+        className="group flex items-center gap-2 rounded-full bg-marcs-green pl-4 pr-5 py-3 text-white shadow-lg shadow-blue-900/30 hover:bg-marcs-teal hover:scale-105 transition-all"
         aria-label="Call MARCS Engineering"
       >
         <svg className="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

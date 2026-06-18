@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FacilityGallery } from '../components/ui/FacilityGallery';
 import { PageCta } from '../components/ui/PageCta';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
@@ -12,6 +13,7 @@ import {
   qualityTests,
   testingEquipment,
 } from '../data/content';
+import { facilityPhotosByCategory } from '../data/facilityPhotos';
 import { stockImages } from '../data/images';
 
 const machineryColors = [
@@ -41,7 +43,7 @@ export function CapabilitiesPage() {
       </PageHero>
 
       {/* Machinery — cards */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-20 lg:py-28 bg-blue-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Equipment"
@@ -98,19 +100,14 @@ export function CapabilitiesPage() {
               ))}
             </div>
             <div className="grid gap-4">
-              <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video">
-                <img src={stockImages.factoryFloor} alt="Manufacturing facility" className="w-full h-full object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video">
-                <img src={stockImages.warehouse} alt="Production area" className="w-full h-full object-cover" />
-              </div>
+              <FacilityGallery photos={facilityPhotosByCategory.Facility} columns={1} light />
             </div>
           </div>
         </div>
       </SectionShell>
 
       {/* Process */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-blue-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Process"
@@ -118,13 +115,7 @@ export function CapabilitiesPage() {
             subtitle="Every stage monitored by trained professionals."
           />
           <div className="grid lg:grid-cols-2 gap-10">
-            <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-              <img
-                src={stockImages.inspection}
-                alt="Production line"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <FacilityGallery photos={facilityPhotosByCategory.Process} columns={1} />
             <div className="grid sm:grid-cols-2 gap-2 content-start">
               {processSteps.map((step, i) => (
                 <div
@@ -143,7 +134,7 @@ export function CapabilitiesPage() {
       </section>
 
       {/* Powder types */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-blue-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Coating Options"
@@ -178,25 +169,28 @@ export function CapabilitiesPage() {
           />
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
-            <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6">
-              <h3 className="font-bold text-marcs-yellow mb-4">Quality Pillars</h3>
-              <ul className="space-y-2">
-                {qualityPillars.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-slate-200">
-                    <span className="text-marcs-yellow">●</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6">
-              <h3 className="font-bold text-marcs-yellow mb-4">Quality Control Tests</h3>
-              <ul className="space-y-2">
-                {qualityTests.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-slate-200">
-                    <span className="text-marcs-yellow">●</span> {item}
-                  </li>
-                ))}
-              </ul>
+            <FacilityGallery photos={facilityPhotosByCategory.Quality} columns={1} light />
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6">
+                <h3 className="font-bold text-marcs-yellow mb-4">Quality Pillars</h3>
+                <ul className="space-y-2">
+                  {qualityPillars.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-slate-200">
+                      <span className="text-marcs-yellow">●</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6">
+                <h3 className="font-bold text-marcs-yellow mb-4">Quality Control Tests</h3>
+                <ul className="space-y-2">
+                  {qualityTests.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-slate-200">
+                      <span className="text-marcs-yellow">●</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 

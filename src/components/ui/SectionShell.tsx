@@ -9,7 +9,7 @@ type SectionShellProps = {
 };
 
 const overlays = {
-  dark: 'bg-gradient-to-br from-marcs-dark/92 via-slate-900/88 to-marcs-green/80',
+  dark: 'bg-gradient-to-br from-marcs-dark/92 via-blue-950/88 to-marcs-green/80',
   light: 'bg-white/93 backdrop-blur-sm',
   green: 'bg-gradient-to-br from-marcs-green/92 to-marcs-teal/88',
 };

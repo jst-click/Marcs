@@ -10,7 +10,7 @@ export function PageCta() {
         <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
           Ready to Start Your Project?
         </h2>
-        <p className="mt-4 text-green-100 text-lg">
+        <p className="mt-4 text-blue-100 text-lg">
           Get a tailored coating solution — send your inquiry via WhatsApp or request a formal quote.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">

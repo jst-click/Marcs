@@ -3,6 +3,7 @@ import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
 import { about, clientNames, company, industries, services } from '../data/content';
+import { aboutFacilityPhoto } from '../data/facilityPhotos';
 import { stockImages } from '../data/images';
 import { getTelLink, getWhatsAppLink } from '../lib/contactLinks';
 
@@ -97,15 +98,15 @@ export function HomePage() {
       </div>
 
       {/* About */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
+              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-white border border-slate-100">
                 <img
-                  src={stockImages.factoryFloor}
-                  alt="MARCS Engineering facility"
-                  className="w-full h-full object-cover"
+                  src={aboutFacilityPhoto.src}
+                  alt={aboutFacilityPhoto.title}
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
@@ -175,7 +176,7 @@ export function HomePage() {
       </SectionShell>
 
       {/* Services */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-20 lg:py-28 bg-blue-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Capabilities"
@@ -209,7 +210,7 @@ export function HomePage() {
       <WhyChooseUs />
 
       {/* Industries */}
-      <section className="py-20 bg-white border-t border-slate-100">
+      <section className="py-20 bg-white border-t border-blue-100/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Industries"
@@ -255,7 +256,7 @@ export function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             Ready to Start Your Project?
           </h2>
-          <p className="mt-4 text-green-100 text-lg">
+          <p className="mt-4 text-blue-100 text-lg">
             Send your quote request via WhatsApp — our team responds with a tailored coating solution.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

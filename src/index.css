@@ -4,9 +4,11 @@
   --color-marcs-red: #e31e24;
   --color-marcs-orange: #ff6b00;
   --color-marcs-yellow: #ffb800;
-  --color-marcs-green: #1a5e3a;
-  --color-marcs-teal: #1a5e7a;
-  --color-marcs-dark: #0f172a;
+  --color-marcs-green: #1e40af;
+  --color-marcs-teal: #2563eb;
+  --color-marcs-dark: #0c1a3a;
+  --color-marcs-blue: #3b82f6;
+  --color-marcs-sky: #0ea5e9;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Georgia", "Times New Roman", serif;
 }
@@ -19,6 +21,11 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: #1e293b;
-  background: #ffffff;
+  background: #f4f8ff;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-marcs-teal) 25%, white);
+  color: var(--color-marcs-dark);
 }
