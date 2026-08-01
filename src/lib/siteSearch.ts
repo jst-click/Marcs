@@ -1,6 +1,5 @@
 import {
   about,
-  caseStudies,
   clientNames,
   company,
   contacts,
@@ -22,15 +21,15 @@ export type SearchResult = {
 const searchIndex: SearchResult[] = [
   { title: 'Home', description: company.tagline, to: '/', category: 'Pages' },
   {
-    title: 'Capabilities & Services',
-    description: 'Machinery, process, powder types & quality',
-    to: '/capabilities',
+    title: 'About Us',
+    description: about.headline,
+    to: '/about',
     category: 'Pages',
   },
   {
-    title: 'Projects & Case Studies',
-    description: 'Client work, sustainability & future vision',
-    to: '/projects',
+    title: 'Services',
+    description: 'Comprehensive surface finishing solutions',
+    to: '/services',
     category: 'Pages',
   },
   {
@@ -43,23 +42,23 @@ const searchIndex: SearchResult[] = [
   ...services.map((s) => ({
     title: s.title,
     description: s.description,
-    to: '/capabilities',
+    to: '/services',
     category: 'Services',
   })),
   ...machinery.map((m) => ({
     title: m.name,
     description: `${m.count} · ${m.capacity}`,
-    to: '/capabilities',
+    to: '/services',
     category: 'Machinery',
   })),
   ...powderTypes.map((p) => ({
     title: p,
-    to: '/capabilities',
+    to: '/services',
     category: 'Powder Coating',
   })),
   ...processSteps.map((step) => ({
     title: step,
-    to: '/capabilities',
+    to: '/services',
     category: 'Process',
   })),
   ...industries.map((i) => ({
@@ -72,16 +71,10 @@ const searchIndex: SearchResult[] = [
     to: '/',
     category: 'Why MARCS',
   })),
-  ...caseStudies.map((c) => ({
-    title: c.title,
-    description: c.industry,
-    to: '/projects',
-    category: 'Case Studies',
-  })),
   ...clientNames.map((c) => ({
     title: c,
     description: 'Trusted client',
-    to: '/projects',
+    to: '/about',
     category: 'Clients',
   })),
   ...contacts.map((c) => ({
@@ -93,7 +86,13 @@ const searchIndex: SearchResult[] = [
   {
     title: 'About MARCS',
     description: about.intro,
-    to: '/',
+    to: '/about',
+    category: 'Company',
+  },
+  {
+    title: 'Our Vision',
+    description: about.vision,
+    to: '/about',
     category: 'Company',
   },
   {

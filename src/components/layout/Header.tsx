@@ -5,8 +5,8 @@ import { Logo } from '../ui/Logo';
 
 const navItems = [
   { to: '/', label: 'Home' },
-  { to: '/capabilities', label: 'Capabilities & Services' },
-  { to: '/projects', label: 'Projects & Case Studies' },
+  { to: '/about', label: 'About Us' },
+  { to: '/services', label: 'Services' },
   { to: '/contact', label: 'Contact & RFQ' },
 ];
 

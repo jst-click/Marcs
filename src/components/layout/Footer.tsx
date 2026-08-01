@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
 import { company, contacts } from '../../data/content';
-import {
-  getTelLinkFromDisplayPhone,
-  getWhatsAppLinkFromDisplayPhone,
-} from '../../lib/contactLinks';
 import { Logo } from '../ui/Logo';
 
 export function Footer() {
@@ -22,8 +18,8 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="hover:text-marcs-yellow transition-colors">Home</Link></li>
-              <li><Link to="/capabilities" className="hover:text-marcs-yellow transition-colors">Capabilities & Services</Link></li>
-              <li><Link to="/projects" className="hover:text-marcs-yellow transition-colors">Projects & Case Studies</Link></li>
+              <li><Link to="/about" className="hover:text-marcs-yellow transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-marcs-yellow transition-colors">Services</Link></li>
               <li><Link to="/contact" className="hover:text-marcs-yellow transition-colors">Contact & RFQ</Link></li>
             </ul>
           </div>
@@ -35,23 +31,7 @@ export function Footer() {
                 <div key={c.email}>
                   <p className="text-white font-medium">{c.name}</p>
                   <p className="text-slate-400">{c.title}</p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    <a
-                      href={getTelLinkFromDisplayPhone(c.phone)}
-                      className="text-slate-300 hover:text-white transition-colors"
-                    >
-                      📞 {c.phone}
-                    </a>
-                    <a
-                      href={getWhatsAppLinkFromDisplayPhone(c.phone)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#25D366] hover:text-[#20bd5a] transition-colors"
-                    >
-                      WhatsApp
-                    </a>
-                  </div>
-                  <a href={`mailto:${c.email}`} className="text-pink-400 hover:text-pink-300">
+                  <a href={`mailto:${c.email}`} className="mt-2 inline-block text-pink-400 hover:text-pink-300">
                     ✉️ {c.email}
                   </a>
                 </div>

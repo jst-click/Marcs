@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
-import { CapabilitiesPage } from './pages/CapabilitiesPage';
+import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
-import { ProjectsPage } from './pages/ProjectsPage';
+import { ServicesPage } from './pages/ServicesPage';
 
 export default function App() {
   return (
@@ -11,9 +11,11 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/capabilities" element={<CapabilitiesPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/capabilities" element={<Navigate to="/services" replace />} />
+          <Route path="/projects" element={<Navigate to="/about" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,10 +2,9 @@ import { Link } from 'react-router-dom';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
-import { about, clientNames, company, industries, services } from '../data/content';
-import { aboutFacilityPhoto } from '../data/facilityPhotos';
+import { clients, company, home, industries, serviceGallery, services } from '../data/content';
 import { stockImages } from '../data/images';
-import { getTelLink, getWhatsAppLink } from '../lib/contactLinks';
+import { getWhatsAppLink } from '../lib/contactLinks';
 
 const stats = [
   { value: '25+', label: 'Years Experience' },
@@ -25,7 +24,7 @@ export function HomePage() {
   return (
     <>
       {/* Hero */}
-      <SectionShell bgImage={stockImages.powderCoating} overlay="dark" className="min-h-[90vh] flex items-center">
+      <SectionShell bgImage={serviceGallery[2]?.src ?? stockImages.powderCoating} overlay="dark" className="min-h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -36,13 +35,12 @@ export function HomePage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-white leading-[1.1] tracking-tight">
-                Advanced Powder Coating &{' '}
-                <span className="text-marcs-yellow">Surface Finishing</span>
+                Premium Powder Coating Solutions for{' '}
+                <span className="text-marcs-yellow">Industrial Excellence</span>
               </h1>
 
-              <p className="mt-5 text-lg text-slate-200 leading-relaxed max-w-xl">
-                {company.tagline}. Trusted by leading OEMs in Bangalore for durable,
-                corrosion-resistant industrial coatings since 1997.
+              <p className="mt-5 text-xl font-semibold text-marcs-yellow tracking-wide">
+                {home.tagline}
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -61,10 +59,10 @@ export function HomePage() {
                   WhatsApp
                 </a>
                 <Link
-                  to="/capabilities"
+                  to="/services"
                   className="inline-flex items-center rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/15 backdrop-blur-sm transition-all"
                 >
-                  Capabilities
+                  Our Services
                 </Link>
               </div>
             </div>
@@ -97,16 +95,16 @@ export function HomePage() {
         </div>
       </div>
 
-      {/* About */}
+      {/* Welcome */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-white to-blue-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-white border border-slate-100">
+              <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100 border border-slate-100">
                 <img
-                  src={aboutFacilityPhoto.src}
-                  alt={aboutFacilityPhoto.title}
-                  className="w-full h-full object-contain"
+                  src={serviceGallery[0].src}
+                  alt={serviceGallery[0].alt}
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -117,36 +115,50 @@ export function HomePage() {
 
             <div className="order-1 lg:order-2">
               <SectionHeading
-                eyebrow="About MARCS"
-                title="Industrial Excellence in Every Finish"
-                subtitle="State-of-the-art facility in Nelamangala with automated coating systems."
+                eyebrow="Welcome"
+                title={home.headline}
+                subtitle={home.tagline}
               />
-              <p className="text-slate-600 leading-relaxed -mt-4 mb-6">{about.intro}</p>
-
-              <ul className="space-y-3 mb-8">
-                {about.mission.slice(0, 4).map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <span className="mt-1 w-5 h-5 rounded-full bg-marcs-green/10 text-marcs-green flex items-center justify-center text-xs shrink-0">
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
+              <p className="text-slate-600 leading-relaxed -mt-4 mb-8">{home.welcome}</p>
               <Link
-                to="/projects"
+                to="/about"
                 className="inline-flex rounded-xl bg-marcs-green px-6 py-3 text-sm font-semibold text-white hover:bg-marcs-teal transition-colors"
               >
-                View Projects & Case Studies
+                About Us
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Our Commitment */}
+      <section className="py-20 lg:py-28 bg-marcs-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Why MARCS"
+            title="Our Commitment"
+            subtitle="What drives every coating project we deliver."
+            light
+            align="center"
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {home.commitments.map((item, i) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm p-6 hover:bg-white/15 transition-colors"
+              >
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-marcs-yellow/20 text-marcs-yellow text-sm font-bold">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-4 font-bold text-lg leading-snug">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
-      <SectionShell bgImage={stockImages.inspection} overlay="dark" className="py-20 text-white">
+      <SectionShell bgImage={serviceGallery[6]?.src ?? stockImages.inspection} overlay="dark" className="py-20 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Process"
@@ -168,8 +180,8 @@ export function HomePage() {
             ))}
           </div>
           <p className="text-center mt-10">
-            <Link to="/capabilities" className="text-marcs-yellow font-semibold hover:underline text-sm">
-              View full 15-step workflow →
+            <Link to="/services" className="text-marcs-yellow font-semibold hover:underline text-sm">
+              Explore our services →
             </Link>
           </p>
         </div>
@@ -179,7 +191,7 @@ export function HomePage() {
       <section className="py-20 lg:py-28 bg-blue-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            eyebrow="Capabilities"
+            eyebrow="Services"
             title="End-to-End Surface Finishing"
             subtitle="Powder coating, pretreatment, and custom finishes for ferrous and non-ferrous components."
             align="center"
@@ -188,20 +200,30 @@ export function HomePage() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="group rounded-2xl bg-white border border-slate-200 p-6 shadow-sm hover:shadow-lg hover:border-marcs-green/30 transition-all"
+                className="group overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-marcs-green/30 transition-all"
               >
-                <div className="w-10 h-1 rounded-full bg-marcs-green mb-4 group-hover:w-14 transition-all" />
-                <h3 className="font-bold text-slate-900">{service.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">{service.description}</p>
+                <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="w-10 h-1 rounded-full bg-marcs-green mb-4 group-hover:w-14 transition-all" />
+                  <h3 className="font-bold text-slate-900">{service.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">{service.description}</p>
+                </div>
               </article>
             ))}
           </div>
           <p className="text-center mt-10">
             <Link
-              to="/capabilities"
+              to="/services"
               className="inline-flex rounded-xl border border-marcs-green text-marcs-green px-6 py-3 text-sm font-semibold hover:bg-marcs-green hover:text-white transition-colors"
             >
-              Explore Machinery & Specs
+              View All Services
             </Link>
           </p>
         </div>
@@ -231,56 +253,52 @@ export function HomePage() {
       </section>
 
       {/* Clients */}
-      <section className="py-16 bg-marcs-dark">
+      <section className="py-16 lg:py-20 bg-marcs-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-marcs-yellow mb-2">
-            Our Clients
+          <p className="text-marcs-yellow text-xs font-bold uppercase tracking-[0.2em] mb-3">
+            Trusted By
           </p>
-          <h2 className="text-2xl font-bold text-white mb-8">Trusted by Leading Organizations</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {clientNames.map((name) => (
-              <span
-                key={name}
-                className="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-300"
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-10">Our Clients</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {clients.map((client) => (
+              <div
+                key={client.name}
+                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white px-4 py-5 shadow-sm min-h-[120px]"
               >
-                {name}
-              </span>
+                <div className="h-12 w-full flex items-center justify-center">
+                  <img
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    className="max-h-12 max-w-[140px] w-auto object-contain"
+                    loading="lazy"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      img.style.display = 'none';
+                      const fallback = img.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.hidden = false;
+                    }}
+                  />
+                  <span
+                    hidden
+                    className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-marcs-green/10 text-marcs-green text-sm font-bold"
+                    aria-hidden
+                  >
+                    {client.name
+                      .split(/\s+/)
+                      .slice(0, 2)
+                      .map((w) => w[0])
+                      .join('')
+                      .toUpperCase()}
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm font-medium text-slate-700 leading-snug">
+                  {client.name}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <SectionShell bgImage={stockImages.warehouse} overlay="green" className="py-20">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Ready to Start Your Project?
-          </h2>
-          <p className="mt-4 text-blue-100 text-lg">
-            Send your quote request via WhatsApp — our team responds with a tailored coating solution.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="rounded-xl bg-white px-8 py-3.5 text-sm font-bold text-marcs-green shadow-lg hover:bg-marcs-yellow hover:text-marcs-dark transition-colors"
-            >
-              Request a Quote
-            </Link>
-            <a
-              href={getWhatsAppLink('Hello MARCS Engineering, I would like to request a quote.')}
-              className="rounded-xl bg-[#25D366] px-8 py-3.5 text-sm font-bold text-white hover:bg-[#20bd5a] transition-colors"
-            >
-              WhatsApp Us
-            </a>
-            <a
-              href={getTelLink()}
-              className="rounded-xl border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-            >
-              Call Now
-            </a>
-          </div>
-        </div>
-      </SectionShell>
     </>
   );
 }

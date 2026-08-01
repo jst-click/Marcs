@@ -6,9 +6,7 @@ import { company, contacts, logistics } from '../data/content';
 import { stockImages } from '../data/images';
 import {
   getTelLink,
-  getTelLinkFromDisplayPhone,
   getWhatsAppLink,
-  getWhatsAppLinkFromDisplayPhone,
 } from '../lib/contactLinks';
 import { redirectRfqToWhatsApp } from '../lib/submitRfq';
 
@@ -134,24 +132,7 @@ export function ContactPage() {
                 >
                   <p className="font-bold text-lg">{c.name}</p>
                   <p className="text-sm text-slate-400">{c.title}</p>
-                  <p className="mt-3 text-marcs-yellow font-medium">{c.phone}</p>
-                  <p className="text-sm text-slate-400 mt-1">{c.email}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <a
-                      href={getTelLinkFromDisplayPhone(c.phone)}
-                      className="rounded-lg bg-marcs-green px-4 py-2 text-xs font-bold hover:bg-marcs-teal transition-colors"
-                    >
-                      Call
-                    </a>
-                    <a
-                      href={getWhatsAppLinkFromDisplayPhone(c.phone, `Hello ${c.name}, I'd like to inquire about MARCS Engineering.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="rounded-lg bg-[#25D366] px-4 py-2 text-xs font-bold hover:bg-[#20bd5a] transition-colors"
-                    >
-                      WhatsApp
-                    </a>
-                  </div>
+                  <p className="text-sm text-slate-400 mt-3">{c.email}</p>
                 </div>
               ))}
 

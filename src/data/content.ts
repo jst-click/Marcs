@@ -8,9 +8,24 @@ export const company = {
   profileLength: '3 meters',
 };
 
+export const home = {
+  headline: 'Premium Powder Coating Solutions for Industrial Excellence',
+  tagline: 'Durable. Reliable. Precision Finished.',
+  welcome:
+    "Welcome to Marcs Engineering Pvt Ltd, one of Bangalore's leading industrial powder coating and surface finishing service providers, delivering high-quality coating solutions since 1997. Located in Nelamangala, Bangalore, we specialize in providing durable, corrosion-resistant, and aesthetically superior surface finishing services for a wide range of industrial applications.",
+  commitments: [
+    'Superior Surface Finishing',
+    'Advanced Powder Coating Technology',
+    'On-Time Delivery',
+    'Customer-Focused Solutions',
+    'Consistent Quality Standards',
+  ],
+};
+
 export const about = {
+  headline: 'Building Quality Through Innovation',
   intro:
-    'MARCS Engineering Pvt. Ltd. is one of Bangalore\'s leading industrial powder coating and surface finishing service providers, delivering high-quality coating solutions since 1997. Located in Nelamangala, Bangalore, we specialize in providing durable, corrosion-resistant, and aesthetically superior surface finishing services for a wide range of industrial applications.',
+    'Founded with a vision to deliver world-class surface finishing solutions, Marcs Engineering Pvt Ltd has become a reliable partner for customers across multiple industries. Our expertise in powder coating, modern infrastructure, and commitment to continuous improvement enable us to consistently exceed customer expectations.',
   description:
     'Founded in 1997, MARCS Engineering Pvt. Ltd. has established itself as a trusted partner for powder coating and surface treatment solutions across various industries. Our state-of-the-art facility is equipped with advanced pretreatment systems, automated powder coating plants, and controlled curing ovens that ensure consistent quality and long-lasting performance.',
   certification:
@@ -18,13 +33,11 @@ export const about = {
   experience:
     'With over 25 years of experience, advanced infrastructure, automated coating systems, and a highly skilled technical team, we are committed to delivering exceptional quality, reliability, and customer satisfaction for every project.',
   vision:
-    'To become the most preferred and trusted powder coating service provider by delivering excellence in quality, innovation, and customer satisfaction.',
+    'To be a leading powder coating company recognized for quality, innovation, and customer satisfaction.',
   mission: [
-    'Deliver superior coating quality and performance.',
-    'Ensure complete customer satisfaction.',
-    'Adopt environmentally friendly and sustainable coating processes.',
-    'Continuously improve technology and operational efficiency.',
-    'Build long-term partnerships through reliability and commitment.',
+    'Deliver Superior powder coating services.',
+    'Maintain the highest quality standards.',
+    'Build long-term customer relationships.',
   ],
 };
 
@@ -43,36 +56,60 @@ export const contacts = [
   },
 ];
 
+/** Mailed facility photos — served from /images/Photo for website */
+const PHOTO_DIR = '/images/Photo%20for%20website';
+const servicePhoto = (file: string) => `${PHOTO_DIR}/${encodeURIComponent(file)}`;
+
+export const serviceGallery = [
+  { src: servicePhoto('PC-1.JPG'), alt: 'Powder coating booth' },
+  { src: servicePhoto('PC-2.JPG'), alt: 'Automated powder coating in progress' },
+  { src: servicePhoto('PC-3.JPG'), alt: 'Technicians applying powder coating' },
+  { src: servicePhoto('PT Line -1.JPG'), alt: 'Surface pretreatment line' },
+  { src: servicePhoto('pt-2.JPG'), alt: 'Pretreatment process tanks' },
+  { src: servicePhoto('PT-3.JPG'), alt: 'Pretreatment facility' },
+  { src: servicePhoto('UN-1.JPG'), alt: 'Coated industrial components' },
+  { src: servicePhoto('LAB-1.JPG'), alt: 'Quality laboratory testing' },
+  { src: servicePhoto('LAB-2.JPG'), alt: 'Quality inspection and titration' },
+  { src: servicePhoto('c6.webp'), alt: 'Custom colour finish' },
+  { src: servicePhoto('pc pic.webp'), alt: 'Powder coating finish detail' },
+  { src: servicePhoto('images-34-500x500.webp'), alt: 'Colour powder coating application' },
+];
+
 export const services = [
   {
-    title: 'Powder Coating Services',
+    title: 'Powder Coating',
     description:
-      'High-performance powder coating for ferrous and non-ferrous materials with superior finish, durability, and corrosion resistance.',
+      'High-performance powder coating with excellent durability, corrosion resistance, and an attractive finish.',
+    image: servicePhoto('PC-3.JPG'),
   },
   {
-    title: 'Chromatizing for Aluminum',
+    title: 'Surface Pretreatment',
     description:
-      'Advanced chemical treatment to enhance corrosion resistance and improve coating adhesion on aluminum components.',
+      'Advanced cleaning and pretreatment processes to ensure maximum coating adhesion and long-lasting performance.',
+    image: servicePhoto('PT Line -1.JPG'),
   },
   {
-    title: 'Galva Grip Process for GI',
+    title: 'Industrial Component Coating',
     description:
-      'Specialized pretreatment for galvanized iron materials ensuring excellent adhesion and long-term durability.',
+      'Protective coating solutions for fabricated components, sheet metal parts, and industrial equipment.',
+    image: servicePhoto('UN-1.JPG'),
   },
   {
-    title: 'Degreasing & Phosphating',
-    description:
-      'Comprehensive 9-tank pretreatment system for mild steel ensuring optimal surface preparation before coating.',
+    title: 'Custom Colour Finishing',
+    description: 'Wide range of colours and textures as per customer specifications.',
+    image: servicePhoto('images-34-500x500.webp'),
   },
   {
-    title: 'Industrial Surface Protection',
+    title: 'Quality Inspection',
     description:
-      'Customized coating solutions protecting industrial components from environmental damage, wear, and corrosion.',
+      'Comprehensive inspection and testing to ensure every product meets quality requirements.',
+    image: servicePhoto('LAB-1.JPG'),
   },
   {
-    title: 'Custom Color & Texture Finishes',
+    title: 'Packaging & Dispatch',
     description:
-      'Wide range of colors, textures, and coating specifications tailored to your industrial requirements.',
+      'Safe packaging and timely delivery to maintain product quality throughout transportation.',
+    image: servicePhoto('PC-2.JPG'),
   },
 ];
 
@@ -222,22 +259,25 @@ export const facilityHighlights = [
   'Dedicated color coating lines for faster delivery',
 ];
 
-export const clientNames = [
-  'GE HealthCare',
-  'Schneider Electric',
-  'ABB',
-  'Vertiv',
-  'Lam Research',
-  'CYIENT',
-  'INCAP',
-  'INDIC EMS',
-  'Amitec',
-  'C-MAX Metal India',
-  'Unique Punch Systems',
-  'APPL',
-  'Succinnova',
-  'Phantom Hands',
+export const clients = [
+  { name: 'GE HealthCare', logo: '/clients/ge-healthcare.png' },
+  { name: 'Schneider Electric', logo: '/clients/schneider-electric.png' },
+  { name: 'ABB', logo: '/clients/abb.png' },
+  { name: 'Vertiv', logo: '/clients/vertiv.png' },
+  { name: 'Lam Research', logo: '/clients/lam-research.png' },
+  { name: 'CYIENT', logo: '/clients/cyient.png' },
+  { name: 'INCAP', logo: '/clients/incap.png' },
+  { name: 'INDIC EMS', logo: '/clients/indic-ems.svg' },
+  { name: 'Amitec', logo: '/clients/amitec.png' },
+  { name: 'C-MAX Metal India', logo: '/clients/c-max-metal-india.png' },
+  { name: 'Unique Punch Systems', logo: '/clients/unique-punch-systems.png' },
+  { name: 'APPL', logo: '/clients/appl.png' },
+  { name: 'Succinnova', logo: '/clients/succinnova.png' },
+  { name: 'Phantom Hands', logo: '/clients/phantom-hands.png' },
 ];
+
+/** @deprecated use `clients` */
+export const clientNames = clients.map((c) => c.name);
 
 export const caseStudies = [
   {
