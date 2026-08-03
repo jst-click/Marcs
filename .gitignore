@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large media (keep local only)
+*.mp4
+public/images/Photo for website/*.mp4
+

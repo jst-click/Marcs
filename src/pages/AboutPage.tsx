@@ -1,11 +1,32 @@
 import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
-import { about } from '../data/content';
+import { about, company } from '../data/content';
 import { stockImages } from '../data/images';
+
+const companyVideo = `/images/Photo%20for%20website/${encodeURIComponent('MARCS ENGINEERING PVT  LTD.mp4')}`;
 
 export function AboutPage() {
   return (
     <>
+      {/* Company video — top of page */}
+      <section className="relative bg-marcs-dark pt-16 md:pt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 bg-black aspect-video">
+            <video
+              className="h-full w-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster={stockImages.factoryFloor}
+              aria-label={`${company.name} company video`}
+            >
+              <source src={companyVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       <PageHero
         eyebrow="About Us"
         title={about.headline}
