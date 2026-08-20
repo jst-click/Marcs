@@ -2,7 +2,7 @@ import type { FormEvent } from 'react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
-import { company, contacts, logistics } from '../data/content';
+import { company, contacts, logistics, serviceGallery } from '../data/content';
 import { stockImages } from '../data/images';
 import {
   getTelLink,
@@ -33,7 +33,7 @@ export function ContactPage() {
         eyebrow="Contact & RFQ"
         title="Request a Quote"
         subtitle="Fill in your project details — you'll be redirected to WhatsApp to send your inquiry directly to our team."
-        bgImage={stockImages.powderCoating}
+        bgImage={serviceGallery[2].src}
       >
         <a
           href={getWhatsAppLink('Hello MARCS Engineering, I would like to request a quote.')}

@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
-import { services } from '../data/content';
-import { stockImages } from '../data/images';
+import { serviceGallery, services } from '../data/content';
 
 export function ServicesPage() {
   return (
@@ -11,7 +10,7 @@ export function ServicesPage() {
         eyebrow="Services"
         title="Comprehensive Surface Finishing Solutions"
         subtitle="End-to-end powder coating and surface finishing — from pretreatment and coating to inspection, packaging, and dispatch."
-        bgImage={stockImages.manufacturing}
+        bgImage={serviceGallery[0].src}
       >
         <Link
           to="/contact"
