@@ -49,7 +49,7 @@ export const contacts = [
     email: 'sm.marcs@gmail.com',
   },
   {
-    name: 'Mr. M P Haricharan',
+    name: 'Mr. Haricharan M P',
     title: 'Managing Director',
     phone: '+91 98450 44145',
     email: 'charannph@gmail.com',

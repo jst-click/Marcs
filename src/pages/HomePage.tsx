@@ -4,25 +4,11 @@ import { home } from '../data/content';
 export function HomePage() {
   return (
     <>
-      {/* Section 1 — Animated multicolor welcome */}
+      {/* Section 1 — Image background + animated welcome */}
       <section className="relative min-h-[100svh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pb-16">
-        {/* Dark colorful fluid background */}
-        <div className="absolute inset-0 home-base" aria-hidden />
-        <div className="home-mesh absolute inset-0" aria-hidden />
-        <div className="home-aurora absolute inset-0" aria-hidden />
-        <div className="home-silk absolute inset-0" aria-hidden />
-        <div className="home-silk home-silk-b absolute inset-0" aria-hidden />
-        <div className="home-ribbons absolute inset-0" aria-hidden />
-        <div className="home-orbs absolute inset-0" aria-hidden>
-          <span className="home-orb home-orb-a" />
-          <span className="home-orb home-orb-b" />
-          <span className="home-orb home-orb-c" />
-          <span className="home-orb home-orb-d" />
-          <span className="home-orb home-orb-e" />
-          <span className="home-orb home-orb-f" />
-        </div>
-        <div className="home-sparkles absolute inset-0" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60" aria-hidden />
+        <div className="absolute inset-0 bg-[#05040c]" aria-hidden />
+        <div className="home-hero-photo absolute inset-0" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/55" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
           <div className="relative flex flex-col items-center justify-center text-center px-3 sm:px-6 py-10 sm:py-16 md:py-20">
