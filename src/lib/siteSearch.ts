@@ -38,7 +38,7 @@ const searchIndex: SearchResult[] = [
     to: '/contact',
     category: 'Pages',
   },
-  { title: 'Request a Quote', description: 'Submit an RFQ via WhatsApp', to: '/contact', category: 'Actions' },
+  { title: 'Request a Quote', description: 'Submit an RFQ via email', to: '/contact', category: 'Actions' },
   ...services.map((s) => ({
     title: s.title,
     description: s.description,

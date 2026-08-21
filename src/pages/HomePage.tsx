@@ -6,10 +6,15 @@ export function HomePage() {
     <>
       {/* Section 1 — Animated multicolor welcome */}
       <section className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-12">
-        {/* Animated background layers */}
+        {/* Pure CSS colorful fluid background */}
         <div className="absolute inset-0 home-base" aria-hidden />
+        <div className="home-mesh absolute inset-0" aria-hidden />
         <div className="home-aurora absolute inset-0" aria-hidden />
+        <div className="home-silk absolute inset-0" aria-hidden />
+        <div className="home-silk home-silk-b absolute inset-0" aria-hidden />
+        <div className="home-silk home-silk-c absolute inset-0" aria-hidden />
         <div className="home-ribbons absolute inset-0" aria-hidden />
+        <div className="home-waves absolute inset-0" aria-hidden />
         <div className="home-sweep absolute inset-0" aria-hidden />
         <div className="home-orbs absolute inset-0" aria-hidden>
           <span className="home-orb home-orb-a" />
@@ -17,9 +22,10 @@ export function HomePage() {
           <span className="home-orb home-orb-c" />
           <span className="home-orb home-orb-d" />
           <span className="home-orb home-orb-e" />
+          <span className="home-orb home-orb-f" />
         </div>
         <div className="home-sparkles absolute inset-0" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/55" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
           <div className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 py-14 sm:py-20 md:py-24 min-h-[55vh]">
