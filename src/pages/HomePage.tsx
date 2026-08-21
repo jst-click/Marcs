@@ -5,17 +5,14 @@ export function HomePage() {
   return (
     <>
       {/* Section 1 — Animated multicolor welcome */}
-      <section className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-12">
-        {/* Pure CSS colorful fluid background */}
+      <section className="relative min-h-[100svh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pb-16">
+        {/* Dark colorful fluid background */}
         <div className="absolute inset-0 home-base" aria-hidden />
         <div className="home-mesh absolute inset-0" aria-hidden />
         <div className="home-aurora absolute inset-0" aria-hidden />
         <div className="home-silk absolute inset-0" aria-hidden />
         <div className="home-silk home-silk-b absolute inset-0" aria-hidden />
-        <div className="home-silk home-silk-c absolute inset-0" aria-hidden />
         <div className="home-ribbons absolute inset-0" aria-hidden />
-        <div className="home-waves absolute inset-0" aria-hidden />
-        <div className="home-sweep absolute inset-0" aria-hidden />
         <div className="home-orbs absolute inset-0" aria-hidden>
           <span className="home-orb home-orb-a" />
           <span className="home-orb home-orb-b" />
@@ -25,19 +22,20 @@ export function HomePage() {
           <span className="home-orb home-orb-f" />
         </div>
         <div className="home-sparkles absolute inset-0" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
-          <div className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 py-14 sm:py-20 md:py-24 min-h-[55vh]">
-            <p className="home-line home-line-welcome">Welcome</p>
-            <p className="home-line home-line-to">To</p>
-            <div className="home-title-wrap mt-4 sm:mt-6 md:mt-8">
+          <div className="relative flex flex-col items-center justify-center text-center px-3 sm:px-6 py-10 sm:py-16 md:py-20">
+            <p className="home-line home-line-welcome">
+              Welcome <span className="home-line-to-inline">To</span>
+            </p>
+            <div className="home-title-wrap mt-3 sm:mt-5 md:mt-7">
               <p className="home-line home-line-brand">Marcs</p>
               <p className="home-line home-line-brand">Engineering</p>
               <p className="home-line home-line-brand home-line-brand-sub">Pvt Ltd</p>
               <span className="home-title-glow" aria-hidden />
             </div>
-            <div className="home-tagline-wrap mt-6 sm:mt-8 md:mt-10">
+            <div className="home-tagline-wrap mt-5 sm:mt-8">
               <span className="home-tagline-rule" aria-hidden />
               <p className="home-line home-line-tagline">
                 Advanced Powder coating and surface finishing solutions
