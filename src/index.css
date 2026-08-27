@@ -30,9 +30,19 @@ body {
   color: var(--color-marcs-dark);
 }
 
-/* Home hero — video background (no play/controls UI) */
+/* Home hero — muted looping video background (no play UI) */
 .home-hero-video {
   overflow: hidden;
+  pointer-events: none;
+}
+
+.home-hero-video-el {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
 }
 
@@ -41,11 +51,10 @@ body {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: 56.25vw; /* 16:9 */
+  height: 56.25vw;
   min-height: 100%;
-  min-width: 177.78vh; /* 16:9 */
+  min-width: 177.78vh;
   border: 0;
-  /* Scale past edges so title / play / controls are cropped out */
   transform: translate(-50%, -50%) scale(1.45);
   pointer-events: none;
 }

@@ -60,6 +60,7 @@ export const contacts = [
 const PHOTO_DIR = '/images/Photo%20for%20website';
 const servicePhoto = (file: string) => `${PHOTO_DIR}/${encodeURIComponent(file)}`;
 
+export const companyVideo = servicePhoto('MARCS ENGINEERING PVT  LTD.mp4');
 export const companyVideoId = 'rW3vjIejvNw';
 export const aboutVideoId = '-rCSHAYYZew';
 export const aboutVideoEmbed = `https://www.youtube-nocookie.com/embed/${aboutVideoId}`;
