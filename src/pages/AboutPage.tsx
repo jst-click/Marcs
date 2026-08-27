@@ -13,7 +13,7 @@ export function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
           <div className="about-video-wrap relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 bg-black aspect-video">
             <iframe
-              className="absolute inset-0 h-full w-full border-0"
+              className="about-video-iframe"
               src={aboutVideoSrc}
               title={`${company.name} company video`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -21,6 +21,7 @@ export function AboutPage() {
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
             />
+            <div className="about-video-title-mask" aria-hidden />
             <div className="about-video-brand-mask" aria-hidden />
           </div>
         </div>

@@ -48,9 +48,29 @@ body {
   border: 0;
 }
 
-/* About company video — hide corner branding mark */
+/* About company video — crop/hide title bar & corner branding */
 .about-video-wrap {
   isolation: isolate;
+}
+
+.about-video-iframe {
+  position: absolute;
+  left: 0;
+  top: -68px;
+  width: 100%;
+  height: calc(100% + 68px);
+  border: 0;
+}
+
+.about-video-title-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 3.25rem;
+  background: linear-gradient(to bottom, #000 55%, transparent);
+  pointer-events: none;
 }
 
 .about-video-brand-mask {
@@ -65,6 +85,15 @@ body {
 }
 
 @media (max-width: 640px) {
+  .about-video-iframe {
+    top: -52px;
+    height: calc(100% + 52px);
+  }
+
+  .about-video-title-mask {
+    height: 2.5rem;
+  }
+
   .about-video-brand-mask {
     width: 5.5rem;
     height: 2.25rem;
