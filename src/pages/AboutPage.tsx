@@ -22,6 +22,7 @@ export function AboutPage() {
               referrerPolicy="strict-origin-when-cross-origin"
             />
             <div className="about-video-title-mask" aria-hidden />
+            <div className="about-video-watch-mask" aria-hidden />
             <div className="about-video-brand-mask" aria-hidden />
           </div>
         </div>

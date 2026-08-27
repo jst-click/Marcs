@@ -73,6 +73,17 @@ body {
   pointer-events: none;
 }
 
+.about-video-watch-mask {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 10.5rem;
+  height: 3.25rem;
+  background: #000;
+  pointer-events: none;
+}
+
 .about-video-brand-mask {
   position: absolute;
   right: 0;
@@ -92,6 +103,11 @@ body {
 
   .about-video-title-mask {
     height: 2.5rem;
+  }
+
+  .about-video-watch-mask {
+    width: 8.5rem;
+    height: 2.75rem;
   }
 
   .about-video-brand-mask {
