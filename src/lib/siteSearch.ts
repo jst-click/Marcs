@@ -69,7 +69,7 @@ const searchIndex: SearchResult[] = [
   ...strengths.map((s) => ({
     title: s,
     to: '/',
-    category: 'Why MARCS',
+    category: 'Why Marcs',
   })),
   ...clientNames.map((c) => ({
     title: c,
@@ -84,7 +84,7 @@ const searchIndex: SearchResult[] = [
     category: 'Contact',
   })),
   {
-    title: 'About MARCS',
+    title: 'About Marcs',
     description: about.intro,
     to: '/about',
     category: 'Company',

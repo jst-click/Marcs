@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom';
 import { home } from '../data/content';
 
+const HOME_HERO_VIDEO_ID = 'rW3vjIejvNw';
+const homeHeroVideoSrc = `https://www.youtube.com/embed/${HOME_HERO_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${HOME_HERO_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+
 export function HomePage() {
   return (
     <>
-      {/* Section 1 — Image background + animated welcome */}
+      {/* Section 1 — YouTube video background + animated welcome */}
       <section className="relative min-h-[100svh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pb-16">
         <div className="absolute inset-0 bg-[#05040c]" aria-hidden />
-        <div className="home-hero-photo absolute inset-0" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/55" aria-hidden />
+        <div className="home-hero-video absolute inset-0" aria-hidden>
+          <iframe
+            className="home-hero-video-iframe"
+            src={homeHeroVideoSrc}
+            title="Marcs Engineering company video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen={false}
+            loading="eager"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60 pointer-events-none" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
           <div className="relative flex flex-col items-center justify-center text-center px-3 sm:px-6 py-10 sm:py-16 md:py-20">

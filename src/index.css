@@ -30,30 +30,22 @@ body {
   color: var(--color-marcs-dark);
 }
 
-/* Home hero — photo background with slow motion */
-.home-hero-photo {
-  background-image: url('/images/home-hero-bg.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  transform: scale(1.12);
-  animation: home-photo-ken 28s ease-in-out infinite alternate;
-  will-change: transform;
+/* Home hero — YouTube video background (cover) */
+.home-hero-video {
+  overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes home-photo-ken {
-  0% {
-    transform: scale(1.12) translate(0%, 0%);
-    background-position: 42% 48%;
-  }
-  50% {
-    transform: scale(1.2) translate(-1.5%, 1%);
-    background-position: 55% 42%;
-  }
-  100% {
-    transform: scale(1.16) translate(1.2%, -0.8%);
-    background-position: 48% 58%;
-  }
+.home-hero-video-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100%;
+  min-width: 177.78vh; /* 16:9 */
+  transform: translate(-50%, -50%);
+  border: 0;
 }
 
 @keyframes home-text-float {
@@ -397,10 +389,6 @@ body {
     max-width: 17.5rem;
     font-size: 0.82rem;
   }
-
-  .home-hero-photo {
-    background-position: center 45%;
-  }
 }
 
 @keyframes home-base-shift {
@@ -621,7 +609,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-hero-photo,
   .home-base,
   .home-mesh,
   .home-aurora,
@@ -660,8 +647,7 @@ body {
     -webkit-text-fill-color: unset;
   }
 
-  .home-hero-photo {
-    transform: none;
-    background-position: center center;
+  .home-hero-video {
+    display: none;
   }
 }

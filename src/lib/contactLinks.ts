@@ -13,7 +13,7 @@ export const secondaryPhone = {
 };
 
 const defaultWhatsAppMessage =
-  'Hello MARCS Engineering, I would like to inquire about your powder coating services.';
+  'Hello Marcs Engineering, I would like to inquire about your powder coating services.';
 
 export function getMailtoLink(email = primaryEmail) {
   return `mailto:${email}`;

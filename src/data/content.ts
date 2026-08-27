@@ -1,5 +1,5 @@
 export const company = {
-  name: 'MARCS Engineering Pvt. Ltd.',
+  name: 'Marcs Engineering Pvt. Ltd.',
   tagline: 'Advanced Powder Coating & Surface Finishing Solutions',
   subtitle: '25+ Years of Industrial Excellence | ISO 9001:2015 Certified',
   location: 'Nelamangala, Bangalore, Karnataka, India',
@@ -27,7 +27,7 @@ export const about = {
   intro:
     'Founded with a vision to deliver world-class surface finishing solutions, Marcs Engineering Pvt Ltd has become a reliable partner for customers across multiple industries. Our expertise in powder coating, modern infrastructure, and commitment to continuous improvement enable us to consistently exceed customer expectations.',
   description:
-    'Founded in 1997, MARCS Engineering Pvt. Ltd. has established itself as a trusted partner for powder coating and surface treatment solutions across various industries. Our state-of-the-art facility is equipped with advanced pretreatment systems, automated powder coating plants, and controlled curing ovens that ensure consistent quality and long-lasting performance.',
+    'Founded in 1997, Marcs Engineering Pvt. Ltd. has established itself as a trusted partner for powder coating and surface treatment solutions across various industries. Our state-of-the-art facility is equipped with advanced pretreatment systems, automated powder coating plants, and controlled curing ovens that ensure consistent quality and long-lasting performance.',
   certification:
     'As an ISO 9001:2015 certified company, we follow stringent quality standards and industry best practices to deliver superior coating solutions that meet customer expectations and international quality requirements.',
   experience:
@@ -52,13 +52,15 @@ export const contacts = [
     name: 'Mr. Haricharan M P',
     title: 'Managing Director',
     phone: '+91 98450 44145',
-    email: 'charannph@gmail.com',
+    email: 'charanmph@gmail.com',
   },
 ];
 
 /** Mailed facility photos — served from /images/Photo for website */
 const PHOTO_DIR = '/images/Photo%20for%20website';
 const servicePhoto = (file: string) => `${PHOTO_DIR}/${encodeURIComponent(file)}`;
+
+export const companyVideo = servicePhoto('MARCS ENGINEERING PVT  LTD.mp4');
 
 export const serviceGallery = [
   { src: servicePhoto('PC-1.JPG'), alt: 'Powder coating booth' },
@@ -68,9 +70,9 @@ export const serviceGallery = [
   { src: servicePhoto('pt-2.JPG'), alt: 'Pretreatment process tanks' },
   { src: servicePhoto('PT-3.JPG'), alt: 'Pretreatment facility' },
   { src: servicePhoto('UN-1.JPG'), alt: 'Coated industrial components' },
-  { src: servicePhoto('LAB-1.JPG'), alt: 'Quality laboratory testing' },
+  { src: servicePhoto('quality-inspection.png'), alt: 'Quality inspection testing' },
   { src: servicePhoto('LAB-2.JPG'), alt: 'Quality inspection and titration' },
-  { src: servicePhoto('c6.webp'), alt: 'Custom colour finish' },
+  { src: servicePhoto('custom-colour.png'), alt: 'Custom colour finish' },
   { src: servicePhoto('pc pic.webp'), alt: 'Powder coating finish detail' },
   { src: servicePhoto('images-34-500x500.webp'), alt: 'Colour powder coating application' },
 ];
@@ -97,19 +99,19 @@ export const services = [
   {
     title: 'Custom Colour Finishing',
     description: 'Wide range of colours and textures as per customer specifications.',
-    image: servicePhoto('images-34-500x500.webp'),
+    image: servicePhoto('custom-colour.png'),
   },
   {
     title: 'Quality Inspection',
     description:
       'Comprehensive inspection and testing to ensure every product meets quality requirements.',
-    image: servicePhoto('LAB-1.JPG'),
+    image: servicePhoto('quality-inspection.png'),
   },
   {
     title: 'Packaging & Dispatch',
     description:
       'Safe packaging and timely delivery to maintain product quality throughout transportation.',
-    image: servicePhoto('PC-2.JPG'),
+    image: servicePhoto('packaging-dispatch.png'),
   },
 ];
 
@@ -341,7 +343,7 @@ export const futureVision = [
 ];
 
 export const logistics = {
-  address: 'MARCS Engineering Pvt. Ltd., Nelamangala, Bangalore, Karnataka, India',
+  address: 'Marcs Engineering Pvt. Ltd., Nelamangala, Bangalore, Karnataka, India',
   dockHours: 'Monday – Saturday: 9:00 AM – 6:00 PM',
   receiving: 'Loading dock available for freight and bulk material delivery',
   mapQuery: 'Nelamangala, Bangalore, Karnataka, India',

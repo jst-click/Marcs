@@ -164,7 +164,7 @@ export function ContactPage() {
           />
           <div className="rounded-2xl overflow-hidden border border-white/20 shadow-2xl aspect-video max-w-5xl mx-auto">
             <iframe
-              title="MARCS Engineering location"
+              title="Marcs Engineering location"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(logistics.mapQuery)}&z=13&output=embed`}
               className="w-full h-full min-h-[400px] border-0"
               loading="lazy"

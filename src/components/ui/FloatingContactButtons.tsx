@@ -9,7 +9,7 @@ export function FloatingContactButtons() {
       <a
         href={getMailtoLink()}
         className="group flex items-center justify-center gap-2 rounded-full bg-[#EA4335] p-3 sm:pl-4 sm:pr-5 sm:py-3 text-white shadow-lg shadow-red-900/30 hover:bg-[#d33b2e] hover:scale-105 transition-all"
-        aria-label="Email MARCS Engineering"
+        aria-label="Email Marcs Engineering"
       >
         <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
           <path
@@ -38,7 +38,7 @@ export function FloatingContactButtons() {
       <a
         href={getTelLink()}
         className="group flex items-center justify-center gap-2 rounded-full bg-marcs-green p-3 sm:pl-4 sm:pr-5 sm:py-3 text-white shadow-lg shadow-blue-900/30 hover:bg-marcs-teal hover:scale-105 transition-all"
-        aria-label="Call MARCS Engineering"
+        aria-label="Call Marcs Engineering"
       >
         <svg className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
           <path

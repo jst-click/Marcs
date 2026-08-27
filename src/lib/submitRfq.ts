@@ -14,7 +14,7 @@ export type RfqFormData = {
 
 export function buildRfqEmailBody(data: RfqFormData): string {
   return [
-    'RFQ — MARCS Engineering',
+    'RFQ — Marcs Engineering',
     '',
     `Name: ${data.name}`,
     `Company: ${data.company}`,
