@@ -48,6 +48,30 @@ body {
   border: 0;
 }
 
+/* About company video — hide corner branding mark */
+.about-video-wrap {
+  isolation: isolate;
+}
+
+.about-video-brand-mask {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 7.5rem;
+  height: 3rem;
+  background: #000;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .about-video-brand-mask {
+    width: 5.5rem;
+    height: 2.25rem;
+  }
+}
+
+
 @keyframes home-text-float {
   0%,
   100% {

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
-import { about, company, companyVideo } from '../data/content';
+import { about, aboutVideoEmbed, company } from '../data/content';
 import { stockImages } from '../data/images';
+
+const aboutVideoSrc = `${aboutVideoEmbed}?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&fs=1&cc_load_policy=0`;
 
 export function AboutPage() {
   return (
@@ -9,17 +11,17 @@ export function AboutPage() {
       {/* Company video — top of page */}
       <section className="relative bg-marcs-dark pt-16 md:pt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 bg-black aspect-video">
-            <video
-              className="h-full w-full object-contain bg-black"
-              src={companyVideo}
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={`${company.name} company video`}
-            >
-              Your browser does not support the video tag.
-            </video>
+          <div className="about-video-wrap relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 bg-black aspect-video">
+            <iframe
+              className="absolute inset-0 h-full w-full border-0"
+              src={aboutVideoSrc}
+              title={`${company.name} company video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+            <div className="about-video-brand-mask" aria-hidden />
           </div>
         </div>
       </section>
