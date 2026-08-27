@@ -1,24 +1,26 @@
 import { Link } from 'react-router-dom';
 import { companyVideoId, home } from '../data/content';
 
-const homeHeroVideoSrc = `https://www.youtube.com/embed/${companyVideoId}?autoplay=1&mute=1&loop=1&playlist=${companyVideoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+const homeHeroVideoSrc = `https://www.youtube-nocookie.com/embed/${companyVideoId}?autoplay=1&mute=1&loop=1&playlist=${companyVideoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&color=white`;
 
 export function HomePage() {
   return (
     <>
-      {/* Section 1 — YouTube video background + animated welcome */}
+      {/* Section 1 — video background + animated welcome (no player UI) */}
       <section className="relative min-h-[100svh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pb-16">
         <div className="absolute inset-0 bg-[#05040c]" aria-hidden />
         <div className="home-hero-video absolute inset-0" aria-hidden>
           <iframe
             className="home-hero-video-iframe"
             src={homeHeroVideoSrc}
-            title="Marcs Engineering company video"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen={false}
+            title="Marcs Engineering background"
+            allow="autoplay; encrypted-media"
+            tabIndex={-1}
             loading="eager"
           />
         </div>
+        {/* Block clicks / hide player chrome */}
+        <div className="home-hero-video-shield absolute inset-0" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60 pointer-events-none" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
