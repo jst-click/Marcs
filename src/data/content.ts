@@ -61,6 +61,9 @@ const PHOTO_DIR = '/images/Photo%20for%20website';
 const servicePhoto = (file: string) => `${PHOTO_DIR}/${encodeURIComponent(file)}`;
 
 export const companyVideo = servicePhoto('MARCS ENGINEERING PVT  LTD.mp4');
+export const companyVideoId = 'rW3vjIejvNw';
+export const companyVideoEmbed = `https://www.youtube.com/embed/${companyVideoId}`;
+export const companyVideoWatch = `https://youtu.be/${companyVideoId}`;
 
 export const serviceGallery = [
   { src: servicePhoto('PC-1.JPG'), alt: 'Powder coating booth' },

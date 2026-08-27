@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { home } from '../data/content';
+import { companyVideoId, home } from '../data/content';
 
-const HOME_HERO_VIDEO_ID = 'rW3vjIejvNw';
-const homeHeroVideoSrc = `https://www.youtube.com/embed/${HOME_HERO_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${HOME_HERO_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
+const homeHeroVideoSrc = `https://www.youtube.com/embed/${companyVideoId}?autoplay=1&mute=1&loop=1&playlist=${companyVideoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`;
 
 export function HomePage() {
   return (
