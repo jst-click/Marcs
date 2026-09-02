@@ -51,7 +51,7 @@ export const contacts = [
   {
     name: 'Mr. Haricharan M P',
     title: 'Managing Director',
-    phone: '+91 98450 44145',
+    phone: '+91 98440 44145',
     email: 'charanmph@gmail.com',
   },
 ];
@@ -61,7 +61,8 @@ const PHOTO_DIR = '/images/Photo%20for%20website';
 const servicePhoto = (file: string) => `${PHOTO_DIR}/${encodeURIComponent(file)}`;
 
 export const companyVideo = servicePhoto('MARCS ENGINEERING PVT  LTD.mp4');
-export const companyVideoId = 'rW3vjIejvNw';
+export const companyVideoId = 'pGbIOC83-So';
+export const homeVideoStartSeconds = 6;
 export const aboutVideoId = '-rCSHAYYZew';
 export const aboutVideoEmbed = `https://www.youtube-nocookie.com/embed/${aboutVideoId}`;
 

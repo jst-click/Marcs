@@ -7,9 +7,9 @@ export const primaryPhone = {
 };
 
 export const secondaryPhone = {
-  display: '+91 98450 44145',
-  tel: '+919845044145',
-  whatsapp: '919845044145',
+  display: '+91 98440 44145',
+  tel: '+919844044145',
+  whatsapp: '919844044145',
 };
 
 const defaultWhatsAppMessage =

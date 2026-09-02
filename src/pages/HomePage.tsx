@@ -1,49 +1,137 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { companyVideo, home } from '../data/content';
+import { companyVideoId, home, homeVideoStartSeconds } from '../data/content';
+
+type YTPlayer = {
+  mute: () => void;
+  playVideo: () => void;
+  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+  destroy: () => void;
+};
+
+type YTNamespace = {
+  Player: new (
+    element: HTMLElement,
+    options: {
+      videoId: string;
+      playerVars: Record<string, number | string>;
+      events: {
+        onReady: (event: { target: YTPlayer }) => void;
+        onStateChange: (event: { data: number; target: YTPlayer }) => void;
+      };
+    },
+  ) => YTPlayer;
+};
+
+declare global {
+  interface Window {
+    YT?: YTNamespace;
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
 
 export function HomePage() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const playerHostRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
+  const coverTimerRef = useRef<number | undefined>(undefined);
+  const [showCover, setShowCover] = useState(true);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = true;
-    const play = () => {
-      void video.play().catch(() => {
-        /* autoplay may be blocked until interaction; keep muted for retry */
+    const hideCoverSoon = () => {
+      window.clearTimeout(coverTimerRef.current);
+      coverTimerRef.current = window.setTimeout(() => setShowCover(false), 700);
+    };
+
+    const showCoverNow = () => {
+      window.clearTimeout(coverTimerRef.current);
+      setShowCover(true);
+    };
+
+    const startPlayback = (player: YTPlayer) => {
+      showCoverNow();
+      player.mute();
+      player.seekTo(homeVideoStartSeconds, true);
+      player.playVideo();
+    };
+
+    const mountPlayer = () => {
+      if (!playerHostRef.current || !window.YT) return;
+
+      playerRef.current = new window.YT.Player(playerHostRef.current, {
+        videoId: companyVideoId,
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          loop: 1,
+          playlist: companyVideoId,
+          start: homeVideoStartSeconds,
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+          disablekb: 1,
+          fs: 0,
+          playsinline: 1,
+          enablejsapi: 1,
+          origin: window.location.origin,
+        },
+        events: {
+          onReady: (event) => {
+            startPlayback(event.target);
+          },
+          onStateChange: (event) => {
+            const { data, target } = event;
+
+            if (data === 1) {
+              hideCoverSoon();
+              return;
+            }
+
+            showCoverNow();
+
+            if (data === 0) {
+              target.seekTo(homeVideoStartSeconds, true);
+              target.playVideo();
+            } else if (data === 2) {
+              target.playVideo();
+            }
+          },
+        },
       });
     };
-    play();
-    const onVisibility = () => {
-      if (document.visibilityState === 'visible') play();
+
+    if (window.YT?.Player) {
+      mountPlayer();
+    } else {
+      if (!document.querySelector('script[data-yt-api]')) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        tag.async = true;
+        tag.dataset.ytApi = 'true';
+        document.head.appendChild(tag);
+      }
+      window.onYouTubeIframeAPIReady = mountPlayer;
+    }
+
+    return () => {
+      window.clearTimeout(coverTimerRef.current);
+      playerRef.current?.destroy();
+      playerRef.current = null;
     };
-    document.addEventListener('visibilitychange', onVisibility);
-    return () => document.removeEventListener('visibilitychange', onVisibility);
   }, []);
 
   return (
     <>
-      {/* Section 1 — muted looping video background (no play UI) */}
+      {/* Section 1 — YouTube background from 6s, no play UI */}
       <section className="relative min-h-[100svh] overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-28 sm:pb-16">
         <div className="absolute inset-0 bg-[#05040c]" aria-hidden />
         <div className="home-hero-video absolute inset-0" aria-hidden>
-          <video
-            ref={videoRef}
-            className="home-hero-video-el"
-            src={companyVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            controls={false}
-            disablePictureInPicture
-            disableRemotePlayback
-          />
+          <div ref={playerHostRef} className="home-hero-video-player" />
+          {showCover && <div className="home-hero-video-cover" aria-hidden />}
         </div>
         <div className="home-hero-video-shield absolute inset-0" aria-hidden />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/60 pointer-events-none" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/15 to-black/40 pointer-events-none" aria-hidden />
 
         <div className="relative z-10 w-full max-w-6xl">
           <div className="relative flex flex-col items-center justify-center text-center px-3 sm:px-6 py-10 sm:py-16 md:py-20">

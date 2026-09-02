@@ -7,7 +7,9 @@ import { stockImages } from '../data/images';
 import {
   getMailtoLink,
   getTelLink,
+  getTelLinkFromDisplayPhone,
   primaryEmail,
+  primaryPhone,
 } from '../lib/contactLinks';
 import { redirectRfqToEmail } from '../lib/submitRfq';
 
@@ -46,17 +48,19 @@ export function ContactPage() {
           href={getTelLink()}
           className="rounded-xl bg-marcs-green px-6 py-3 text-sm font-bold text-white hover:bg-marcs-teal transition-colors"
         >
-          Call +91 94482 86464
+          Call {primaryPhone.display}
         </a>
       </PageHero>
 
       {/* Quick contact strip */}
       <div className="bg-marcs-green border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-8 text-sm font-medium text-white/95">
-          <span>📞 +91 94482 86464</span>
-          <span>📞 +91 98450 44145</span>
+          {contacts.map((c) => (
+            <a key={c.phone} href={getTelLinkFromDisplayPhone(c.phone)} className="hover:text-marcs-yellow transition-colors">
+              📞 {c.phone}
+            </a>
+          ))}
           <span>📍 {company.location}</span>
-          <span>✉️ sm.marcs@gmail.com</span>
         </div>
       </div>
 
@@ -131,12 +135,17 @@ export function ContactPage() {
             <div className="lg:col-span-2 space-y-6">
               {contacts.map((c) => (
                 <div
-                  key={c.email}
+                  key={c.phone}
                   className="rounded-2xl bg-gradient-to-br from-marcs-dark to-slate-900 text-white p-6 shadow-xl"
                 >
                   <p className="font-bold text-lg">{c.name}</p>
                   <p className="text-sm text-slate-400">{c.title}</p>
-                  <p className="text-sm text-slate-400 mt-3">{c.email}</p>
+                  <a
+                    href={getTelLinkFromDisplayPhone(c.phone)}
+                    className="inline-block mt-3 text-sm font-semibold text-marcs-yellow hover:underline"
+                  >
+                    📞 {c.phone}
+                  </a>
                 </div>
               ))}
 
