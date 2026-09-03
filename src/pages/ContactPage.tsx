@@ -2,7 +2,7 @@ import type { FormEvent } from 'react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
-import { company, contacts, logistics, serviceGallery } from '../data/content';
+import { company, contacts, logistics, services } from '../data/content';
 import { stockImages } from '../data/images';
 import {
   getMailtoLink,
@@ -36,7 +36,7 @@ export function ContactPage() {
         eyebrow="Contact & RFQ"
         title="Request a Quote"
         subtitle="Fill in your project details — your email app will open with the inquiry ready to send to our team."
-        bgImage={serviceGallery[2].src}
+        bgImage={services[1].image}
       >
         <a
           href={getMailtoLink()}
