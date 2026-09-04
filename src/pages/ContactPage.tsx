@@ -2,12 +2,7 @@ import type { FormEvent } from 'react';
 import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
-<<<<<<< HEAD
-import { company, contacts, logistics, serviceGallery } from '../data/content';
-=======
 import { company, contacts, logistics, services } from '../data/content';
-import { stockImages } from '../data/images';
->>>>>>> 664ffbcfe07934df56838c01418bfba25108f73d
 import {
   getMailtoLink,
   getTelLink,
@@ -166,7 +161,11 @@ export function ContactPage() {
         </div>
       </section>
 
-      <SectionShell bgImage={serviceGallery[0].src} overlay="dark" className="py-20">
+      <SectionShell
+        bgImage={services.find((s) => s.title === 'Packaging & Dispatch')?.image ?? services[0].image}
+        overlay="dark"
+        className="py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Location"
