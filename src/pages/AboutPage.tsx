@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
-import { about, aboutVideoEmbed, company } from '../data/content';
-import { stockImages } from '../data/images';
+import { about, aboutVideoEmbed, company, services } from '../data/content';
 
 const aboutVideoSrc = `${aboutVideoEmbed}?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&fs=1&cc_load_policy=0`;
 
@@ -32,7 +31,7 @@ export function AboutPage() {
         eyebrow="About Us"
         title={about.headline}
         subtitle={about.intro}
-        bgImage={stockImages.factoryFloor}
+        bgImage={services[2].image}
       >
         <Link
           to="/services"
