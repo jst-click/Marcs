@@ -3,7 +3,6 @@ import { PageHero } from '../components/ui/PageHero';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { SectionShell } from '../components/ui/SectionShell';
 import { company, contacts, logistics, serviceGallery } from '../data/content';
-import { stockImages } from '../data/images';
 import {
   getMailtoLink,
   getTelLink,
@@ -162,7 +161,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <SectionShell bgImage={stockImages.factoryFloor} overlay="dark" className="py-20">
+      <SectionShell bgImage={serviceGallery[0].src} overlay="dark" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Location"
